@@ -1,0 +1,9 @@
+{
+   "name": "hackerne.ws",
+   "alias": [
+      "hackerne.ws"
+   ],
+   "engines": {
+      "node": "^10.0.0"
+   }
+}

@@ -1,5 +1,11 @@
 ## Hackerne.ws client
 
+<p align="center">
+  <a href="https://travis-ci.org/tdeekens/hackerne.ws.svg?branch=master">
+    <img alt="TravisCI Status" src="https://travis-ci.org/tdeekens/hackerne.ws">
+  </a>
+</p>
+
 This is a small experimental, small hackernews client built to experiment with Service Workers and Intersection Observers. It supports the following features:
 
 1. Fetch stories sequentially as fast as possible

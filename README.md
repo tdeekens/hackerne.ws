@@ -1,8 +1,8 @@
 ## Hackerne.ws client
 
 <p align="center">
-  <a href="https://travis-ci.org/tdeekens/hackerne.ws.svg?branch=master">
-    <img alt="TravisCI Status" src="https://travis-ci.org/tdeekens/hackerne.ws">
+  <a href="https://travis-ci.org/tdeekens/hackerne.ws">
+    <img alt="TravisCI Status" src="https://travis-ci.org/tdeekens/hackerne.ws.svg?branch=master">
   </a>
 </p>
 
@@ -28,7 +28,7 @@ This is a small experimental, small hackernews client built to experiment with S
 
 1. Tests are called `*.spec.js` are are co-located with the components/modules
 2. Run `yarn test` or `yarn test --watch` to run them via Jest
-3. TravisCI is configured to run them too [here]()
+3. TravisCI is configured to run them too [here](https://travis-ci.org/tdeekens/hackerne.ws)
 
 ## Architectural Decisions
 

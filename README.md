@@ -10,6 +10,8 @@ This is a small experimental, small hackernews client built to experiment with S
    - When offline the app will still load
    - When online requests are served from the cache if possible for rendering performance while the cache is invalided after
 
+  <img alt="gif" src="https://raw.githubusercontent.com/tdeekens/hackerne.ws/master/hackerne.ws.gif" />
+
 ## Quick Start
 
 1. Please first install dependencies with either `yarn` or `npm`.

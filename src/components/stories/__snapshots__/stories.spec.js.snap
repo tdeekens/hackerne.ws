@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<div>
+  <InfiniteScroll
+    isLoading={false}
+    onFetchMore={[Function]}
+    sentinelRef={
+      Object {
+        "current": null,
+      }
+    }
+  >
+    <div />
+  </InfiniteScroll>
+</div>
+`;
+
+exports[`rendering stories should match snapshot 1`] = `
+<div>
+  <InfiniteScroll
+    isLoading={false}
+    onFetchMore={[Function]}
+    sentinelRef={
+      Object {
+        "current": null,
+      }
+    }
+  >
+    <Story
+      author="John Doe"
+      id={1}
+      key="1"
+      publishedAt={1541410855801}
+      score={12}
+      title="Test story title"
+      url="http://test-url.com"
+    />
+    <Story
+      author="John Doe"
+      id={2}
+      key="2"
+      publishedAt={1541410855801}
+      score={12}
+      title="Test story title"
+      url="http://test-url.com"
+    />
+    <div />
+  </InfiniteScroll>
+</div>
+`;

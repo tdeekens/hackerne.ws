@@ -1,0 +1,61 @@
+@keyframes fadein {
+   from { opacity: 0; }
+   to   { opacity: 1; }
+}
+
+.story {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   background-color: #fff;
+   width: 100%;
+   animation: fadein 0.3s;
+}
+
+.story > * + * {
+   margin: 1.5em 0;
+}
+
+.score {
+   color: #f60;
+   font-size: 16px;
+   font-weight: bold;
+   margin: 12px
+}
+
+.information {
+   display: flex;
+   flex-direction: row;
+}
+
+.information > * + * {
+   margin: 0 4px;
+}
+
+.title {
+   color: #000;
+   font-size: 14px;
+}
+
+.link {
+   color: #828282;
+   font-size: 14px;
+}
+
+.link > a{
+   text-decoration: none;
+}
+
+.meta {
+   display: flex;
+   flex-direction: row;
+}
+
+.meta > * + * {
+   margin: 0 4px;
+}
+
+.author, .publishedAt {
+   color: #828282;
+   font-size: 14px;
+}

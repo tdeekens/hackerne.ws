@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<div>
+  <div>
+    12
+  </div>
+  <div>
+    <Link
+      title="Test story title"
+      url="http://test-url.com"
+    />
+    <div>
+      <div>
+        by 
+        John Doe
+      </div>
+      <PublishedAt
+        locale="en-US"
+        timestamp={1541410855801}
+      />
+    </div>
+  </div>
+</div>
+`;

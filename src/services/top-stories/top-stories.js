@@ -21,6 +21,10 @@ const defaultConfig = {
  *
  * Internally the service keeps track of loading state, the window and indicates
  * if invoking `fetchMore` would yield more results (by the `hasMore` property).
+ *
+ * The service is built by exposing a factory function. The internals are implemented using an
+ * object instead of an class. Refactoring to class should be an implementation detail
+ * and should not affect consumers.
  */
 export default function create(config = defaultConfig) {
   const storiesService = createStoriesService();

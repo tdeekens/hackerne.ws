@@ -2,6 +2,7 @@ import React from 'react';
 import Story from '../story';
 import InfiniteScroll from '../infinite-scroll';
 import { createTopStoriesService } from '../../services/top-stories';
+import { isUserOnline } from '../../utils/is-user-online';
 import styles from './stories.module.css';
 
 export class Stories extends React.Component {
@@ -82,9 +83,17 @@ export class Stories extends React.Component {
             ref={this.loadingSentinalRef}
             className={styles.loadingStateIndicator}
           >
-            {this.state.isLoading && <span>Loading...</span>}
-            {!this.state.hasMore && <span>No more stories...</span>}
-            {this.state.error && <span>Sorry, something went wrong...</span>}
+            {(() => {
+              if (this.state.error && isUserOnline())
+                return <span>Sorry, something went wrong...</span>;
+              else if (this.state.error && !isUserOnline())
+                return (
+                  <span>You seem to be offline. Please check your network</span>
+                );
+              else if (this.state.isLoading) return <span>Loading...</span>;
+              else if (!this.state.hasMore)
+                return <span>No more stories...</span>;
+            })()}
           </div>
         </InfiniteScroll>
       </div>

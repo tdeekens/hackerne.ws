@@ -2,7 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Stories } from './stories';
 import InfiniteScroll from '../infinite-scroll';
+import { isUserOnline } from '../../utils/is-user-online';
 import Story from '../story';
+
+jest.mock('../../utils/is-user-online');
 
 const createStory = custom => ({
   id: 1,
@@ -16,6 +19,7 @@ const createStory = custom => ({
 
 beforeAll(() => {
   global.fetch = jest.fn(() => Promise.resolve());
+  isUserOnline.mockReturnValue(true);
 });
 
 describe('rendering', () => {
@@ -66,14 +70,27 @@ describe('rendering', () => {
     });
 
     describe('when error occured', () => {
-      beforeEach(() => {
-        wrapper.instance().setError(new Error('test error'));
+      describe('when user is online', () => {
+        beforeEach(() => {
+          wrapper.instance().setError(new Error('test error'));
+        });
+
+        it('should give a indication of a generic error', () => {
+          expect(wrapper.find('span')).toIncludeText(
+            'Sorry, something went wrong'
+          );
+        });
       });
 
-      it('should give a indication of not having more', () => {
-        expect(wrapper.find('span')).toIncludeText(
-          'Sorry, something went wrong'
-        );
+      describe('when user is not online', () => {
+        beforeEach(() => {
+          isUserOnline.mockReturnValue(false);
+          wrapper.instance().setError(new Error('test error'));
+        });
+
+        it('should give a indication user being potentially offline', () => {
+          expect(wrapper.find('span')).toIncludeText('You seem to be offline');
+        });
       });
     });
   });

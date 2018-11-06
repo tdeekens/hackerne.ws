@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { isUserOnline } from '../../utils/is-user-online';
 import { Header } from './header';
 
-beforeAll(() => {
-  global.window = {};
-});
+jest.mock('../../utils/is-user-online');
+
 describe('rendering', () => {
   let props;
   let wrapper;
